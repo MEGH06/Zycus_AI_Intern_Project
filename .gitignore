@@ -1,0 +1,44 @@
+# Python
+__pycache__/
+*.py[cod]
+*.pyo
+.venv/
+venv/
+env/
+*.egg-info/
+.eggs/
+dist/
+build/
+.pytest_cache/
+.coverage
+htmlcov/
+
+# Environment — never commit real keys
+.env
+.env.local
+.env.*.local
+
+# Project internals — not for external reviewers
+.claude/
+HANDOFF.md
+DESIGN_NOTE.md
+LOOM_SCRIPT.md
+DATA_ASSUMPTIONS.md
+_assets/
+
+# Generated eval reports — reproducible, not source
+evals/eval_report.md
+evals/eval_report.json
+
+# OS / editor
+.DS_Store
+Thumbs.db
+desktop.ini
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Data directories — populated at deployment, not committed
+data/
+knowledge-base/
