@@ -1,0 +1,58 @@
+{
+  "tickets": [
+    {
+      "ticket_id": "TKT-001",
+      "account_id": "ACC-ALPHA",
+      "subject": "Cannot log in with SSO",
+      "body": "Since the latest update our entire team is locked out via SSO. SAML assertions are failing. This is blocking all work.",
+      "created_at": "2024-11-01T09:15:00Z",
+      "status": "open",
+      "product_area": "auth"
+    },
+    {
+      "ticket_id": "TKT-002",
+      "account_id": "ACC-ALPHA",
+      "subject": "Incorrect invoice charge",
+      "body": "We were billed twice for the Enterprise tier in October. Please issue a credit immediately.",
+      "created_at": "2024-11-03T14:00:00Z",
+      "status": "open",
+      "product_area": "billing"
+    },
+    {
+      "ticket_id": "TKT-003",
+      "account_id": "ACC-BETA",
+      "subject": "Dashboard loads very slowly",
+      "body": "The main analytics dashboard takes 30+ seconds to load for large date ranges. This started two weeks ago.",
+      "created_at": "2024-11-05T11:30:00Z",
+      "status": "open",
+      "product_area": "analytics"
+    },
+    {
+      "ticket_id": "TKT-004",
+      "account_id": "ACC-BETA",
+      "subject": "Data sync not updating",
+      "body": "Records updated in our ERP are not reflecting in the platform after 24 hours. The sync log shows no errors.",
+      "created_at": "2024-11-06T08:45:00Z",
+      "status": "open",
+      "product_area": "integrations"
+    },
+    {
+      "ticket_id": "TKT-005",
+      "account_id": "ACC-ALPHA",
+      "subject": "Something seems off with reports",
+      "body": "Not sure if this is a bug or configuration but the numbers in the monthly report look different from last month.",
+      "created_at": "2024-11-07T16:20:00Z",
+      "status": "open",
+      "product_area": null
+    },
+    {
+      "ticket_id": "TKT-006",
+      "account_id": "ACC-BETA",
+      "subject": "If this is not fixed we will cancel",
+      "body": "We have raised this sync issue three times now with no resolution. Our leadership is evaluating alternatives. This is our final notice before we begin cancellation proceedings.",
+      "created_at": "2024-11-08T09:00:00Z",
+      "status": "escalated",
+      "product_area": "integrations"
+    }
+  ]
+}
