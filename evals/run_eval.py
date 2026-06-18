@@ -236,7 +236,7 @@ def write_reports(result: dict) -> None:
         "> Run with real data (`--no-fixtures`) once `data/tickets.json` and `data/accounts.json` are populated.",
     ]
 
-    with open(md_path, "w") as f:
+    with open(md_path, "w", encoding="utf-8") as f:
         f.write("\n".join(lines) + "\n")
 
     print(f"Reports written: {json_path}  {md_path}")
