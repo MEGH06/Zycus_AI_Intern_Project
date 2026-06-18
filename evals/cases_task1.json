@@ -1,0 +1,74 @@
+[
+  {
+    "case_id": "T1_SSO_001",
+    "description": "SSO login failure for multiple users",
+    "input": {"subject": "SSO login broken", "body": "Our entire team cannot sign in via SSO since this morning. SAML assertions are failing."},
+    "expected": {
+      "issue_category_any_of": ["authentication"],
+      "urgency_any_of": ["P1", "P2", "P3"],
+      "must_have_known_issue": true,
+      "must_include_team_keyword_any_of": ["auth", "identity", "access", "support"]
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T1_BILLING_001",
+    "description": "Double-charged invoice",
+    "input": {"subject": "Incorrect invoice charge", "body": "We were billed twice for the Enterprise subscription in October. Please issue a credit."},
+    "expected": {
+      "issue_category_any_of": ["billing"],
+      "urgency_any_of": ["P1", "P2", "P3", "P4"],
+      "must_have_known_issue": false,
+      "must_include_team_keyword_any_of": ["billing", "finance", "accounts", "support"]
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T1_OUTAGE_001",
+    "description": "Full production outage - P1 expected",
+    "input": {"subject": "Complete production outage", "body": "The entire platform is down. All users are blocked. Production is completely stopped. Data loss risk is high."},
+    "expected": {
+      "issue_category_any_of": ["authentication", "performance", "integration", "data_sync", "unknown"],
+      "urgency_any_of": ["P1"],
+      "must_have_known_issue": false,
+      "must_include_team_keyword_any_of": ["engineering", "on-call", "oncall", "support", "identity", "auth"]
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T1_PERF_001",
+    "description": "Dashboard performance degradation",
+    "input": {"subject": "Dashboard loads very slowly", "body": "The analytics dashboard takes 30+ seconds to load for any date range over 30 days. This started last week."},
+    "expected": {
+      "issue_category_any_of": ["performance"],
+      "urgency_any_of": ["P2", "P3", "P4"],
+      "must_have_known_issue": true,
+      "must_include_team_keyword_any_of": ["analytics", "data", "engineering", "support"]
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T1_ADV_001",
+    "description": "Adversarial: vague one-word ticket body",
+    "input": {"subject": "Issue", "body": "Problem."},
+    "expected": {
+      "issue_category_any_of": ["authentication", "billing", "performance", "integration", "data_sync", "security", "usability", "unknown"],
+      "urgency_any_of": ["P1", "P2", "P3", "P4"],
+      "must_have_known_issue": false,
+      "must_include_team_keyword_any_of": ["engineering", "success", "support", "identity", "billing", "analytics", "integrations", "security"]
+    },
+    "adversarial": true
+  },
+  {
+    "case_id": "T1_SYNC_001",
+    "description": "Data sync not updating after ERP change",
+    "input": {"subject": "Data sync not updating", "body": "Records updated in our ERP are not reflecting in the platform after 24 hours. The sync log shows no errors."},
+    "expected": {
+      "issue_category_any_of": ["data_sync", "integration"],
+      "urgency_any_of": ["P2", "P3"],
+      "must_have_known_issue": false,
+      "must_include_team_keyword_any_of": ["integration", "engineering", "support"]
+    },
+    "adversarial": false
+  }
+]

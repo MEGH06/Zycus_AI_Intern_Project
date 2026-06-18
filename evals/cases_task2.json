@@ -1,0 +1,77 @@
+[
+  {
+    "case_id": "T2_CHURN_001",
+    "description": "Account with churn language in tickets",
+    "account_id": "ACC-BETA",
+    "expected": {
+      "summary_sentence_min": 3,
+      "summary_sentence_max": 5,
+      "risk_type_any_of": ["churn_risk"],
+      "must_have_quote": true,
+      "talking_points_min": 3
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T2_ESC_001",
+    "description": "Account with escalation signals",
+    "account_id": "ACC-BETA",
+    "expected": {
+      "summary_sentence_min": 3,
+      "summary_sentence_max": 5,
+      "risk_type_any_of": ["churn_risk", "executive_escalation", "severity_or_outage"],
+      "must_have_quote": true,
+      "talking_points_min": 3
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T2_REPEAT_001",
+    "description": "Account with repeated issue in same category",
+    "account_id": "ACC-BETA",
+    "expected": {
+      "summary_sentence_min": 3,
+      "summary_sentence_max": 5,
+      "risk_type_any_of": ["repeated_issue"],
+      "must_have_quote": true,
+      "talking_points_min": 3
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T2_MODERATE_001",
+    "description": "Account with moderate health, some risk",
+    "account_id": "ACC-ALPHA",
+    "expected": {
+      "summary_sentence_min": 3,
+      "summary_sentence_max": 5,
+      "risk_type_any_of": ["churn_risk", "executive_escalation", "renewal_risk", "repeated_issue", "severity_or_outage", "security_or_compliance"],
+      "must_have_quote": true,
+      "talking_points_min": 3
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T2_HEALTHY_001",
+    "description": "Account with moderate health - summary still required",
+    "account_id": "ACC-ALPHA",
+    "expected": {
+      "summary_sentence_min": 3,
+      "summary_sentence_max": 5,
+      "risk_type_any_of": null,
+      "must_have_quote": false,
+      "talking_points_min": 3
+    },
+    "adversarial": false
+  },
+  {
+    "case_id": "T2_ADV_001",
+    "description": "Adversarial: unknown account ID - must fail with controlled error",
+    "account_id": "NONEXISTENT-999",
+    "expected": {
+      "expect_error": true,
+      "error_type": "ValueError"
+    },
+    "adversarial": true
+  }
+]
