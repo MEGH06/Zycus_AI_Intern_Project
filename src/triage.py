@@ -15,7 +15,7 @@ from src.schemas import KnownIssueMatch, TriageOutput
 from src.text_utils import clean_text
 from src.visual_trace import build_triage_trace
 
-_MIN_MATCH_SCORE = 0.15
+_MIN_MATCH_SCORE = 0.08
 
 _DRAFT_TEMPLATES: dict[str, str] = {
     "auth": (
