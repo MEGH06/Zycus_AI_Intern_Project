@@ -230,6 +230,18 @@ def _talking_points(
             f"Renewal date: {renewal} — initiate conversation at least 60 days prior."
         )
 
+    # Guarantee minimum 3 talking points with progressively generic fallbacks
+    _fallbacks = [
+        "Schedule a quarterly business review to surface value and collect product feedback.",
+        "Review open tickets together and confirm resolution timelines with the customer.",
+        "Reaffirm the platform roadmap and how upcoming features address the account's stated needs.",
+    ]
+    for fb in _fallbacks:
+        if len(points) >= 3:
+            break
+        if fb not in points:
+            points.append(fb)
+
     return points[:6]
 
 
