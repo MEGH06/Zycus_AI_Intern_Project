@@ -183,8 +183,16 @@ def _executive_summary(
 
 
 def _renewal_date_str(account: Account) -> str | None:
+    """Read renewal date from the model field or fall back to raw dict."""
     if account.renewal_date:
         return account.renewal_date.strftime("%B %Y")
+    raw_val = account.raw.get("renewal_date")
+    if raw_val:
+        try:
+            dt = datetime.fromisoformat(str(raw_val).replace("Z", "+00:00"))
+            return dt.strftime("%B %Y")
+        except (ValueError, TypeError):
+            pass
     return None
 
 
