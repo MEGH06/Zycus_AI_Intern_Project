@@ -80,6 +80,8 @@ _ISSUE_CATEGORY_KEYWORDS: dict[str, list[str]] = {
     "usability": ["how to", "how-to", "where is", "documentation", "guide", "tutorial", "can you explain"],
 }
 
+# NOTE: keyword matching is substring-based; upgrade to word-boundary regex in production
+# to prevent false positives (e.g. "board" inside "dashboard" triggering escalation).
 _URGENCY_TIERS: list[tuple[str, list[str]]] = [
     ("P1", ["outage", "down", "all users", "production blocked", "data loss", "security breach",
             "entire team locked out", "service down", "critical failure", "complete outage",
