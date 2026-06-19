@@ -51,8 +51,11 @@ def account_brief(account_id: str, use_fixtures: bool = False) -> Any:
 
     try:
         result = generate_account_brief(account_id=account_id, use_fixtures=use_fixtures)
-    except ValueError as exc:
-        raise HTTPException(status_code=404, detail=str(exc))
+    except ValueError:
+        raise HTTPException(
+            status_code=404,
+            detail=f"Account '{account_id}' not found in the loaded dataset.",
+        )
     except (DataAvailabilityError, DataFormatError) as exc:
         raise HTTPException(status_code=503, detail=str(exc))
 
